@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script>
+            document.onkeydown = function(k) {console.log(k)}
+            
+            function cl() {
+                console.log('click')
+                // var keyboardEvent = document.createEvent('KeyboardEvent');
+                // var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? 'initKeyboardEvent' : 'initKeyEvent';
+
+                // keyboardEvent[initMethod](
+                // 'keydown', // event type: keydown, keyup, keypress
+                // true, // bubbles
+                // true, // cancelable
+                // window, // view: should be window
+                // false, // ctrlKey
+                // false, // altKey
+                // false, // shiftKey
+                // false, // metaKey
+                // 32, // keyCode: unsigned long - the virtual key code, else 0
+                // 32, // charCode: unsigned long - the Unicode character associated with the depressed key, else 0
+                // );
+                // document.dispatchEvent(keyboardEvent);
+                document.dispatchEvent(new KeyboardEvent("keydown", {
+                    key: " ",
+                    keyCode: 32, // example values.
+                    code: "Space", // put everything you need in this object.
+                    which: 32,
+                    isTrusted: true
+                }));
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" onclick="cl()"/>
+    </body>
+</html>
